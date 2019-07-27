@@ -10,7 +10,7 @@ class Tello:
     def __init__(self):
         self.address = ('192.168.10.1', 8889)
         self.response = None
-        
+
         # UDP socket
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.bind((HOST, PORT))
@@ -24,7 +24,7 @@ class Tello:
         while True:
             try:
                 self.response, server = sock.recvfrom(1024)
-                print((data.decode(encoding='utf-8'), server))
+                print((self.response.decode(encoding='utf-8'), server))
             except Exception as e:
                 print('Error: ' + e)
                 break
